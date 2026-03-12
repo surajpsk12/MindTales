@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.surajvanshsv.mindtales.core.navigation.AppNavGraph
+import com.surajvanshsv.mindtales.features.splash.SplashScreen
 import com.surajvanshsv.mindtales.ui.theme.MindTalesTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +21,21 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MindTalesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                App()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun App() {
+    AppNavGraph()
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     MindTalesTheme {
-        Greeting("Android")
+        SplashScreen()
     }
 }
