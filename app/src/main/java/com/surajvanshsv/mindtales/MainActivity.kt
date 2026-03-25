@@ -4,17 +4,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.surajvanshsv.mindtales.core.navigation.AppNavGraph
 import com.surajvanshsv.mindtales.features.splash.SplashScreen
 import com.surajvanshsv.mindtales.ui.theme.MindTalesTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +33,7 @@ fun App() {
 @Composable
 fun GreetingPreview() {
     MindTalesTheme {
-        SplashScreen()
+        App()
+
     }
 }
